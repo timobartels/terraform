@@ -12,8 +12,8 @@ provider "aws" {
 }
 
 module "webserver" {
-   source = "../../modules/services/webserver"
-
+   source = "git::git@github.com:timobartels/terraform-modules.git//services/webserver"
+	
    cluster_name = "test-module-cluster"
    ec2_instance_count = 1
    ec2_instance_name = "dev-instance"
