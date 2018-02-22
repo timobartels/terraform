@@ -4,6 +4,7 @@ terraform {
         region   = "us-east-1"
         key      = "sample/stage/service/terraform.tfstate"
         bucket   = "tbartels-terraform-state"
+	encrypt  = true
     }
 }
 
