@@ -9,7 +9,7 @@ terraform init -from-module=github.com/timobartels/terraform-modules/test -backe
 ### How to execute the terraform plan/apply?
 Command:  
 ```
-terraform plan -out=plan -var-file=test.tfvars  
+terraform plan -out=plan -var-file=config.tfvars  
   
 terraform apply plan
 ```
