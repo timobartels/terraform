@@ -1,4 +1,4 @@
-source = "git::git@github.com:timobartels/terraform-modules.git//Main"
+source = "git::git@github.com:timobartels/terraform-modules.git"
 	
 cluster_name = "test-Main-cluster"
 ec2_instance_count = 1
