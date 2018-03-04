@@ -3,12 +3,9 @@ jobs:
   test:
     working_directory: ~/stage/test2
     docker:
-      - image: hashicorp/terraform:0.11.3
+      - image: circleci/terraform:0.11.3
     steps:
       - checkout
       - run:
           name: Terraform init
-          command: terraform init -from-module=github.com/timobartels/terraform-modules -backend-config=backend.conf
-      - run:
-          name: Terraform plan
-          command: terraform plan -out=plan -var-file=config.tfvars
+          command: version
