@@ -1,33 +1,14 @@
 version: 2
 jobs:
-  build:
-    working_directory: ~/terraform
-    docker:
-      - image: hashicorp/terraform:0.11.3
-    steps:
-      - checkout
-      - run:
-          name: Check terraform version
-          command: terraform version
   test:
+    working_directory: ~/stage/test2
     docker:
       - image: hashicorp/terraform:0.11.3
     steps:
       - checkout
       - run:
           name: Terraform init
-          command: terraform init
+          command: terraform init -from-module=github.com/timobartels/terraform-modules -backend-config=backend.conf
       - run:
           name: Terraform plan
-          command: terraform plan -out=plan
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+          command: terraform plan -out=plan -var-file=config.tfvars
