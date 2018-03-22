@@ -1,7 +1,7 @@
 # README
 
 ## Purpose  
-Reference an entire repo containing Terraform modules, and use nested modules within.
+Reference an entire repo containing Terraform modules, and use nested modules within that repo.
 
 ### Setup
 From 'terraform' instantiation repo, a ```config.tfvars``` along with a ```backend.conf``` will be sufficient to call nested modules.  
