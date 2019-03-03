@@ -9,4 +9,7 @@ repos:
     hooks:
       - id: terraform_fmt
       - id: terraform_validate_no_variables
-
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.15.0
+    hooks:
+      - id: yamllint
